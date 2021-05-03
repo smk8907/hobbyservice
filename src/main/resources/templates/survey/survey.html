@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>설문조사 테스트</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>질문번호</th>
+        <th>질문내용</th>
+        <th>서베이번호</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="question : ${questionList}">
+        <td>
+            <span th:text="${question.q_id}"></span>
+        </td>
+        <td>
+            <span th:text="${question.q_content}"></span>
+        </td>
+        <td>
+            <span th:text="${question.s_id}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
