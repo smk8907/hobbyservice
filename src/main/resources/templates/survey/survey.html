@@ -8,23 +8,18 @@
 <table>
     <thead>
     <tr>
-        <th>질문번호</th>
-        <th>질문내용</th>
-        <th>서베이번호</th>
+        <th>관심사</th>
     </tr>
     </thead>
 
     <tbody>
-    <tr th:each="question : ${questionList}">
+    <tr th:each="survey : ${surveyList}">
         <td>
-            <span th:text="${question.q_id}"></span>
+            <a th:href="@{'/survey/' + ${survey.s_id}}">
+                <span th:text="${survey.interest}"></span>
+            </a>
         </td>
-        <td>
-            <span th:text="${question.q_content}"></span>
-        </td>
-        <td>
-            <span th:text="${question.s_id}"></span>
-        </td>
+
     </tr>
     </tbody>
 </table>
